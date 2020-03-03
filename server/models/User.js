@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    orderHistory: {
+      type: Array,
+      default: []
+    },
     role: {
       type: String,
       enum: ['user', 'admin'],
