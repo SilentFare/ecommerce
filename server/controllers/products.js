@@ -36,8 +36,12 @@ const getAll = async (req, res, next) => {
     order = order ? order : 'asc';
     sortBy = sortBy ? sortBy : '_id';
     limit = limit ? parseInt(limit) : 10;
-    const products = await Product.find();
-    res.status(200).json({ products });
+    const products = await Product.find()
+      .populate('category')
+      .sort([[sortBy, order]])
+      .limit(limit);
+    console.log('Products', products);
+    res.status(200).json(products);
   } catch (error) {
     next(error);
   }

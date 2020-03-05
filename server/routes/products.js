@@ -6,7 +6,10 @@ const { products } = require('../controllers');
 
 const router = Router();
 
-router.route('/').post(protect, admin, products.create);
+router
+  .route('/')
+  .get(products.getAll)
+  .post(protect, admin, products.create);
 router
   .route('/:product_id')
   .get(products.getOne)

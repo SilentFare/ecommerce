@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-const app = require('./app');
 // Load environmental variables from '.env' file
 dotenv.config();
+const app = require('./app');
 
 // Connect to MongoDB
 mongoose
@@ -13,7 +13,7 @@ mongoose
     useCreateIndex: true
   })
   .then(() => console.log('Database connected.'))
-  .catch(() => console.error('Database failed connection.'));
+  .catch(error => console.error(error));
 
 // Start Express server
 const port = process.env.PORT || 5000;

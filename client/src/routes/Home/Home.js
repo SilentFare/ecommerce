@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Hero from '../../components/Hero';
 
-export const Home = props => {
+export const Home = ({ fetchBestSellers, fetchNewest }) => {
+  useEffect(() => {
+    fetchBestSellers();
+    fetchNewest();
+  }, []);
+
   return (
     <div>
       <Hero />
@@ -11,4 +16,6 @@ export const Home = props => {
   );
 };
 
-Home.propTypes = {};
+Home.propTypes = {
+  fetchBestSellers: PropTypes.func.isRequired
+};
