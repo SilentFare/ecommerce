@@ -7,7 +7,9 @@
   height: 5em;
   width: 100vw;
   padding: 0 2em;
+  z-index: 10;
   background: black;
+  border-bottom: 2px solid var(--yellow);
 }
 
 .header__home__logo {
