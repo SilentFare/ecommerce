@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import styles from './Shop.module.css';
 import ShopFilters from '../../components/ShopFilters';
 import ItemBox from '../../components/ItemBox';
+import NotFound from '../../components/NotFound';
 
 export const Shop = ({
   fetchCategories,
@@ -32,9 +33,11 @@ export const Shop = ({
         categories={categories}
       />
       <div className={styles.shop__products}>
-        {products.map(product => (
-          <ItemBox />
-        ))}
+        {products.length > 0 ? (
+          products.map(product => <ItemBox />)
+        ) : (
+          <NotFound label='Products not found' />
+        )}
       </div>
     </div>
   );

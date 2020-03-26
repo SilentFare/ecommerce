@@ -1,0 +1,27 @@
+.not__found__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.not__found {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border-radius: 3px;
+  background: var(--lighter-black);
+}
+
+.not__found__label {
+  font-weight: 700;
+  color: var(--yellow);
+  margin-right: 0.5em;
+}
+
+.not__found__icon {
+  font-size: 2rem;
+  color: white;
+}
