@@ -1,0 +1,50 @@
+.dashboard {
+  display: flex;
+  background: var(--black);
+}
+
+.dashboard__menu {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  padding: 2em;
+  background: var(--lighter-black);
+}
+
+.dashboard__menu > *:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.dashboard__main {
+  flex: 1;
+}
+
+.dashboard__menu__button {
+  font-size: 1rem;
+  color: var(--yellow);
+  border-radius: 3px;
+  padding: 0.5em;
+  border: none;
+  text-decoration: none;
+}
+
+.dashboard__menu__button:hover {
+  background: var(--yellow);
+  color: black;
+}
+
+.button_active {
+  background: var(--yellow);
+  color: black;
+}
+
+.button__icon {
+  margin-right: 0.5em;
+}
+
+.dashboard__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

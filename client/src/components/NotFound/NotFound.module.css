@@ -12,7 +12,6 @@
   align-items: center;
   padding: 1em;
   border-radius: 3px;
-  background: var(--lighter-black);
 }
 
 .not__found__label {

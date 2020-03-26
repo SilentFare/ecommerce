@@ -1,0 +1,21 @@
+.table {
+  border-radius: 3px;
+  background: var(--lighter-black);
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 0.5em;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 0.5em;
+}
+
+.table__header {
+  background: var(--yellow);
+}
+
+.table__main {
+}

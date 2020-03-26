@@ -23,7 +23,7 @@ export const App = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/shop' component={Shop} />
-            <Route exact path='/dashboard' component={Dashboard} />
+            <Route path='/dashboard' component={Dashboard} />
           </Switch>
         </main>
       </Router>

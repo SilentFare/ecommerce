@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { MdLibraryBooks } from 'react-icons/md';
+import { IoIosPricetags } from 'react-icons/io';
 
 import styles from './ShopFilters.module.css';
 import CheckBox from '../CheckBox';
@@ -53,7 +55,9 @@ export const ShopFilters = ({ history, searchParams, categories }) => {
 
   return (
     <div className={styles.shop__filters}>
-      <span className={styles.shop__filters__section}>Categories</span>
+      <span className={styles.shop__filters__section}>
+        <MdLibraryBooks /> Categories
+      </span>
       {categories.map(category => (
         <CheckBox
           key={category._id}
@@ -63,7 +67,9 @@ export const ShopFilters = ({ history, searchParams, categories }) => {
           checked={searchParams.getAll('category').includes(category._id)}
         />
       ))}
-      <span className={styles.shop__filters__section}>Price</span>
+      <span className={styles.shop__filters__section}>
+        <IoIosPricetags /> Price
+      </span>
       <form
         className={styles.shop__filters__price}
         onSubmit={handlePriceSubmit}
