@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const User = require('../models/User');
 const createToken = require('../utilities/createToken');
+const AppError = require('../utilities/appError');
 
 const register = async (req, res, next) => {
   try {

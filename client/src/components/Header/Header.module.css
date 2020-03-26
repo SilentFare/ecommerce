@@ -1,14 +1,15 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   top: 0;
   height: 5em;
   width: 100vw;
   padding: 0 2em;
-  z-index: 10;
-  background: black;
+  z-index: 100;
+  background: var(--black);
   border-bottom: 2px solid var(--yellow);
 }
 
@@ -22,4 +23,28 @@
 
 .header__home__icon {
   font-size: 2rem;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+}
+
+.header_left > *:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.header__shopping__cart {
+  color: var(--yellow);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+}
+
+.header_right > *:not(:last-child) {
+  margin-right: 2rem;
 }

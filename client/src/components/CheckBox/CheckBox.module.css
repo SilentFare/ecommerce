@@ -1,0 +1,11 @@
+.checkbox__container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-left: 0.5rem;
+}

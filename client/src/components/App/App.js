@@ -11,6 +11,7 @@ import {
 import styles from './App.module.css';
 import Home from '../../routes/Home';
 import Header from '../Header';
+import Shop from '../../routes/Shop';
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
         <main className={styles.main}>
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/shop' component={Shop} />
           </Switch>
         </main>
       </Router>

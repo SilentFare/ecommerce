@@ -1,0 +1,29 @@
+.itembox {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 15rem;
+  color: black;
+  border: 3px solid var(--yellow);
+  background: var(--yellow);
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+.itembox:hover {
+  border: 3px solid white;
+}
+
+.itembox > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.itembox__picture {
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.itembox__name {
+  font-size: 0.8rem;
+}

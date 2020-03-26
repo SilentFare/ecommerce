@@ -17,7 +17,7 @@ module.exports = async (req, res, next) => {
     // 2. Verify the access token
     const decodedToken = await jwt.verify(token, process.env.ACCESS_SECRET);
     // 3. Search for the user associated with the token
-    const user = await User.findById(decodedToken.userId);
+    const user = await User.findById(decodedToken.userId).lean();
     const { password, ...userWithoutPassword } = user;
     // 4. Set user as property of the request object
     req.user = userWithoutPassword;

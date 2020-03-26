@@ -1,0 +1,28 @@
+.header__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--yellow);
+}
+
+.header__link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  right: 0;
+  bottom: 0;
+  margin-bottom: -10px;
+  background: var(--yellow);
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+}
+
+.header__link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.header__link_active:after {
+  width: 100%;
+  left: 0;
+}

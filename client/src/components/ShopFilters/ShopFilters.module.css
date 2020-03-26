@@ -1,0 +1,41 @@
+.shop__filters {
+  display: flex;
+  flex-direction: column;
+  background: var(--black);
+  color: var(--yellow);
+  padding: 2rem;
+  border-right: 1px solid white;
+  max-width: 25vw;
+}
+
+.shop__filters > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.shop__filters__section {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.shop__filters__price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price__input {
+  font-weight: 700;
+  padding: 0.5rem;
+  width: 25%;
+  border-radius: 3px;
+  border: 3px solid transparent;
+  outline: none;
+}
+
+.price__input:focus {
+  border: 3px solid var(--yellow);
+}
+
+.price__span {
+  align-self: center;
+}

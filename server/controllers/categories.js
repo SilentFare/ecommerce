@@ -4,7 +4,8 @@ const AppError = require('../utilities/appError');
 const create = async (req, res, next) => {
   try {
     const { name } = req.body;
-    const newCategory = await Category.create({ user: req.user.id, name });
+    console.log('REQ USER ', req.user);
+    const newCategory = await Category.create({ user: req.user._id, name });
     res.status(201).json({ category: newCategory });
   } catch (error) {
     next(error);

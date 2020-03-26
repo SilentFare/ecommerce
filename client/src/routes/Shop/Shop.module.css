@@ -1,0 +1,9 @@
+.shop {
+  display: flex;
+}
+
+.shop__products {
+  background: var(--black);
+  flex: 1;
+  padding: 2em;
+}

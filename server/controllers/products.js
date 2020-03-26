@@ -32,17 +32,36 @@ const getOne = async (req, res, next) => {
 
 const getAll = async (req, res, next) => {
   try {
-    let { order, sortBy, limit } = req.query;
+    console.log('GET ALL', req.query);
+    let { order, sortBy, limit, ...filters } = req.query;
     order = order ? order : 'asc';
     sortBy = sortBy ? sortBy : '_id';
-    limit = limit ? parseInt(limit) : 10;
-    const products = await Product.find()
+    limit = limit ? parseInt(limit) : 6;
+    console.log('GET ALL Filters', Object.entries(filters));
+    console.log('Filters', filters);
+    const findArgs = Object.entries(filters).reduce((obj, filter, idx) => {
+      if (typeof filter[1] === 'string') {
+        obj[filter[0]] = obj[filter[0]]
+          ? obj[filter[0]].concat(filter[1])
+          : [filter[1]];
+      } else {
+        filter[1].forEach(val => {
+          obj[filter[0]] = obj[filter[0]] ? obj[filter[0]].concat(val) : [val];
+        });
+      }
+      if (idx === Object.entries(filters).length - 1 && obj['category']) {
+        obj['category'] = { $in: [obj['category']] };
+      }
+      return obj;
+    }, {});
+    const products = await Product.find(findArgs)
       .populate('category')
       .sort([[sortBy, order]])
       .limit(limit);
     console.log('Products', products);
-    res.status(200).json(products);
+    res.status(200).json({ products });
   } catch (error) {
+    console.log('Error', error);
     next(error);
   }
 };

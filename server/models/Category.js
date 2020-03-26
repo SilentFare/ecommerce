@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const categorySchema = new mongoose.Schema(
   {
-    users: {
+    user: {
       type: mongoose.Schema.ObjectId,
       ref: 'User',
       required: true
