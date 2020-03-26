@@ -12,6 +12,7 @@ import styles from './App.module.css';
 import Home from '../../routes/Home';
 import Header from '../Header';
 import Shop from '../../routes/Shop';
+import Dashboard from '../../routes/Dashboard';
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/shop' component={Shop} />
+            <Route exact path='/dashboard' component={Dashboard} />
           </Switch>
         </main>
       </Router>
